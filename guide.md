@@ -1,4 +1,6 @@
 ### 1. Installing the Operating System
+The Raspberry Pi website has an easy to follow getting started https://www.raspberrypi.org/help/videos/
+
 ### 2. Securing your Raspberry Pi
 After installing the raspberry pi operating system, it is time to secure it. The security of your Raspberry Pi is important. Gaps in security leave your Raspberry Pi open to hackers who can then use it without your permission.
 
