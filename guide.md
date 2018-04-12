@@ -32,3 +32,29 @@ To delete the pi user, type the following:
 This command will delete the pi user but will leave the /home/pi folder. If necessary, you can use the command below to remove the home folder for the pi user at the same time. Note the data in this folder will be permanently deleted, so make sure any required data is stored elsewhere.
 
     sudo deluser -remove-home pi
+    
+Login to the just created user and create a ssh key.
+    
+    ssh-keygen
+    
+ ### 2. Setup static ip
+ Start by editing the dhcpcd.conf file
+ 
+    sudo nano /etc/dhcpcd.conf
+ 
+Scroll all the way to the bottom of the file and add one, or both of the following snippets. Depending on whether you want to set a static IP address for a wired connection or a wireless connection eth0 = wired, wlan0 = wireless.
+
+You’ll need to edit the numbers in the snippet so they match your network configuration.
+    
+    interface eth0
+
+    static ip_address=192.168.0.10/24
+    static routers=192.168.0.1
+    static domain_name_servers=192.168.0.1
+
+    interface wlan0
+
+    static ip_address=192.168.0.200/24
+    static routers=192.168.0.1
+    static domain_name_servers=192.168.0.1
+    
